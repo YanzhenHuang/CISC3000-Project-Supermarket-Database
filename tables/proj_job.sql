@@ -1,10 +1,10 @@
+drop table job;
 create table job (
 	job_name varchar(255), 
-    ref_salary decimal(6,2) DEFAULT 2500,
+    ref_salary decimal(38,2) DEFAULT 2500,
     primary key (job_name),
     check (ref_salary>=0 AND ref_salary<=30000) 	-- Reference salary should be over 0 and under 30000
 );
-alter table job ADD primary key (job_name);
 
 
 
@@ -13,15 +13,6 @@ alter table job ADD primary key (job_name);
     
     
     
--- FUNCTIONALITIES:
-	-- Note: For more functionalities refering to jobs, view other files.
-	-- View All jobs with reference salary
-    select job_name, concat("$",cast(ref_salary as decimal(38,2))) 'Reference Salary'
-    from job;
-    
-    
-
-
 
 -- Value Insertions
 
@@ -35,3 +26,10 @@ insert into job values ('Counter Clerk', 15000);
 insert into job values ('Cleaning',10000);
 insert into job values('Intern',5000);
 insert into job values('Temporary Helper',5000);
+
+
+-- FUNCTIONALITIES:
+	-- Note: For more functionalities refering to jobs, view other files.
+	-- View All jobs with reference salary
+    select job_name, concat("$",cast(ref_salary as decimal(38,2))) 'Reference Salary'
+    from job;

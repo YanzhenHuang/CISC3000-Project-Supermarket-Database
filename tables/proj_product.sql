@@ -10,7 +10,6 @@ create table product(
 );
 	alter table product add properties JSON;-- Added a 'Property' column to store more detailed property of a product using JSON. See below.
 
-select * from product;
 
 
 -- DESCRIPTIONS:
@@ -67,9 +66,6 @@ select * from product;
     from product
     where prod_id=54;
 
-
-
-delete from product;
 
 -- ----------------Value Insertion --------------------
 

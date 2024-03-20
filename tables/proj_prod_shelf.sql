@@ -1,10 +1,11 @@
+drop table prod_shelf;
 create table prod_shelf (
 	prod_id INT(13),
     shelf_id INT(3),
     set_amount INT NOT NULL DEFAULT 0,
-    primary key (prod_id, shelf_id),
-    foreign key (prod_id) references product(prod_id),
-    foreign key (shelf_id) references shelf(shelf_id)
+    primary key (prod_id, shelf_id)
+    -- foreign key (prod_id) references product(prod_id),
+    -- foreign key (shelf_id) references shelf(shelf_id)
 );
 
 -- FUNCTIONALITIES
